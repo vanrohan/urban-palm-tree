@@ -32,11 +32,11 @@
       
         a.appendChild(linkText);
         a.title = `visit ${name}`;
-        a.href = `https://{name}`;
+        a.href = `https://${name}`;
         document.body.appendChild(a);
         li.appendChild(a);
         ul.appendChild(li);     
     }
-    })(); //iife untill top level await is a thing https://github.com/tc39/proposal-top-level-await
+    })(); //iife until proposal goes through https://github.com/tc39/proposal-top-level-await
   </script>
 </html>
