@@ -21,12 +21,20 @@
     (async () => {
     const response = await fetch("https://gist.githubusercontent.com/devmachiine/574c70adad40cab348f8597dc4ed70f9/raw/d9bbe54f45a78bcc2ed306eca1022537e17c6a4d/domains.json");
     const domains = await response.json();
-    var ul = document.getElementById("domains");
+    const ul = document.getElementById("domains");
     for(var i = 0; i < domains.length; i++ )
     { 
-        var name = domains[i];
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode(name));
+        const name = domains[i];
+        const li = document.createElement("li");
+
+        const a = document.createElement('a');
+        const linkText = document.createTextNode(name);
+      
+        a.appendChild(linkText);
+        a.title = `visit ${name}`;
+        a.href = `https://{name}`;
+        document.body.appendChild(a);
+        li.appendChild(a);
         ul.appendChild(li);     
     }
     })(); //iife untill top level await is a thing https://github.com/tc39/proposal-top-level-await
