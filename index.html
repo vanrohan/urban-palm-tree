@@ -18,6 +18,7 @@
     if (location.protocol !== 'https:') {
       location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
+    (async () => {
     const response = await fetch("https://gist.githubusercontent.com/devmachiine/574c70adad40cab348f8597dc4ed70f9/raw/d9bbe54f45a78bcc2ed306eca1022537e17c6a4d/domains.json");
     const domains = await response.json();
     var ul = document.getElementById("domains");
@@ -28,5 +29,6 @@
         li.appendChild(document.createTextNode(name));
         ul.appendChild(li);     
     }
+    })(); //iife untill top level await is a thing https://github.com/tc39/proposal-top-level-await
   </script>
 </html>
