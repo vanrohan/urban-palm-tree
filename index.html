@@ -11,4 +11,10 @@
     <p>Contact <a href="mailto:webmaster@example.com">Jon Doe</a> for information</p>
     <p> Payment via crypto <a href="https://opensats.org/projects/btcpayserver"> example</a></p>
   </body>
+  <script>
+    // change http to https
+    if (location.protocol !== 'https:') {
+      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
+  </script>
 </html>
