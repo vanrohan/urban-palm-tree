@@ -20,6 +20,6 @@ cp -r /home/vanrohan/dev/domain-page/dist/* /home/vanrohan/dev/urban-palm-tree/
 # Commit and push changes
 cd /home/vanrohan/dev/urban-palm-tree/
 echo $DomainName > CNAME
-git commit -a * -m "Deploying $DomainName"
-git commit -a -m "domain fix"
+git add *
+git commit -m "Deploying $DomainName"
 git push --force $RemoteRepo
